@@ -1,0 +1,17 @@
+{
+    "bluethink_customer_detail": {
+        "column": {
+            "cust_id": true,
+            "name": true,
+            "email": true,
+            "mnumber": true,
+            "password": true
+        },
+        "index": {
+            "BLUETHINK_CUSTOMER_DETAIL_NAME_EMAIL_PASSWORD": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

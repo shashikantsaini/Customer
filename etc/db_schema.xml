@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="bluethink_customer_detail" resource="default" engine="innodb" comment="Customer Table">
+    <column xsi:type="int" name="cust_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Customer ID"/>
+    <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Customer Name"/>
+    <column xsi:type="varchar" name="email" nullable="true" length="255" comment="Email"/>
+    <column xsi:type="int" name="mnumber" padding="11" unsigned="false" nullable="false" identity="false" default="0" comment="Mobile Number"/>
+    <column xsi:type="varchar" name="password" nullable="true" length="128" comment="Password"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="cust_id"/>
+    </constraint>
+    <index referenceId="BLUETHINK_CUSTOMER_GRID_NAME_EMAIL_PASSWORD" indexType="fulltext">
+      <column name="name"/>
+      <column name="email"/>
+      <column name="password"/>
+    </index>
+  </table>
+</schema>
